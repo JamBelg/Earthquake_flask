@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Flask application</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		<style>
+			table {
+				margin-left: auto;
+				margin-right: auto;
+				font-size: 20px;
+				height: 80%;
+				width: 80%;
+				table-layout: fixed;
+			},
+			td {
+				padding: 5px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Earthquake in Switzerland</h1>
+		<h3>Flask Application</h3>
+		<table id="data" class="table table-striped" data-toggle="true" data-toolbar="#toolbar" data-search="true"
+		data-show-columns="true" data-pagination="true">
+			<thead>
+				<tr>
+					<th class="text-center">Year</th>
+					<th class="text-center">Local_Time</th>
+					<th class="text-center">UTC_Time</th>
+					<th class="text-center">Magnitude</th>
+					<th class="text-center">Location</th>
+					<th class="text-center">Depth</th>
+					<th class="text-center">Agency</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in data %}
+					<tr>
+						<td class="text-center">{{ row.0 }}</td>
+						<td class="text-center">{{ row.1 }}</td>
+						<td class="text-center">{{ row.2 }}</td>
+						<td class="text-center">{{ row.3 }}</td>
+						<td class="text-center">{{ row.4 }}</td>
+						<td class="text-center">{{ row.5 }}</td>
+						<td class="text-center">{{ row.10 }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+	  </table>
+   </body>
+</html>
